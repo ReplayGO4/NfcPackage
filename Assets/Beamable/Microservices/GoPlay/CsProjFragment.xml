@@ -1,0 +1,5 @@
+<ItemGroup>
+    <!-- The WSDL generated MPPGv4Service needs access to ServiceModel, which exists in dotnet framework by default, but must be pulled in via Nuget in net6. -->
+    <PackageReference Include="System.ServiceModel.Http" Version="6.0.0" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" />
+</ItemGroup>
