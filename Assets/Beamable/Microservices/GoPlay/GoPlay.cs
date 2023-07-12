@@ -16,12 +16,15 @@ namespace Beamable.Microservices
 		[ConfigureServices]
 		public static void Configure(IServiceBuilder builder)
 		{
+			// these services are shared for all requests
 			builder.Builder.AddSingleton<IMPPGv4Service>(_ =>
 				new MPPGv4ServiceClient(MPPGv4ServiceClient.EndpointConfiguration.BasicHttpBinding_IMPPGv4Service));
 			builder.Builder.AddSingleton<PaymentServiceSettings>();
 			builder.Builder.AddSingleton<MagTekService>();
-			builder.Builder.AddScoped<NfcPaymentService>();
 			builder.Builder.AddSingleton<NfcPaymentEventBatcher>();
+
+			// every request has its own NfcPaymentService, so that the service can use the IUserContext
+			builder.Builder.AddScoped<NfcPaymentService>();
 
 			JsonHack.Load();
 			
@@ -30,7 +33,6 @@ namespace Beamable.Microservices
 		[InitializeServices]
 		public static void Init(IServiceInitializer initializer)
 		{
-			Debug.Log("Running init");
 			try
 			{
 				var batcher = initializer.GetService<NfcPaymentEventBatcher>();
@@ -41,7 +43,6 @@ namespace Beamable.Microservices
 						await Task.Delay(5000);
 						await batcher.SendAll();
 					}
-
 				});
 			}
 			catch (Exception ex)

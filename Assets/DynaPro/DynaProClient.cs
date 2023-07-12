@@ -35,32 +35,10 @@ public class DynaProClient : MonoBehaviour
     {
         logText.text = "";
         Log("Starting...");
-        //
-        // if (!decimal.TryParse(amountInput.text, out var amount))
-        // {
-        //     Log("Invalid amount :( Enter a decimal number of cents.");
-        //     return;
-        // }
-        //
-        //
+        
         var ctx = BeamContext.Default;
         await ctx.OnReady;
         
-        // Log("requesting charge for " + amount);
-        // var charge = ctx.DynaProService().RequestCharge(amount, 5);
-        // charge.OnProgress += (progress) =>
-        // {
-        //     Log("MSG: " + progress.status);
-        // };
-        // try
-        // {
-        //     var res = await charge.ResultPromise;
-        //     Log("received cryptogram: " + res.transactionResult);
-        // }
-        // catch (DynaProService.DynaProChargeTimeoutException)
-        // {
-        //     Log("Maybe you walked away?");
-        // }
 
         Log("logging payment request for " + listingRef.Id);
         beginResponse = await ctx.Microservices().GoPlay().BeginNfcPayment(new MagtekBeginPaymentRequest
@@ -87,20 +65,10 @@ public class DynaProClient : MonoBehaviour
         catch (DynaProService.DynaProChargeTimeoutException)
         {
             Log("Maybe you walked away?");
+            return;
         }
 
         Log("sending payment...");
-
-        // for (var i = 0; i < 10; i++)
-        // {
-        //     ctx.Microservices().GoPlay().FinishNfcPayment(new MagtekFinishPaymentRequest
-        //     {
-        //         customerTransactionId = beginResponse.customerTransactionId,
-        //         transactionAmount = beginResponse.amount,
-        //         transactionCryptogram = charge.Result.transactionResult,
-        //         nfcPaymentId = beginResponse.nfcPaymentId
-        //     });
-        // }
 
         finishResponse = await ctx.Microservices().GoPlay().FinishNfcPayment(new MagtekFinishPaymentRequest
         {
@@ -112,14 +80,6 @@ public class DynaProClient : MonoBehaviour
 
         Log("Success: " + finishResponse.success);
         Log("Message: " + finishResponse.status);
-        // Log("sending to C#MS");
-        // var req = new MagtekPaymentRequest
-        // {
-        //     amount = amount.ToString(CultureInfo.InvariantCulture),
-        //     transactionToken = res.transactionResult
-        // };
-        // var netRes = await ctx.Microservices().GoPlay().StartDynaProPurchase(req);
-        // Log("Got back payment status: " + netRes);
     }
 
     void Log(string log)
