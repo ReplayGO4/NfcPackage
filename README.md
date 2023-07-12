@@ -22,6 +22,9 @@ This sample project requires some configuration before it is usable.
 
 ## Technical Overview
 
+See [the Unity example script](https://github.com/ReplayGO4/MagtekUnityExample/blob/main/Assets/DynaPro/DynaProClient.cs) to follow the basic flow from the client's perspective.
+
+
 When the player clicks the "Start Charge" button, the payment flow begins. 
 1. The `BeginNfcPayment` method is called on the C#MS. This records a transaction in the Database and creates a usable transaction ID. It also fetches the purchase price from the Beamable listing. If the configured listing has any unsupported properties, then the call to the C#MS will fail.
 2. The client gets the response, which includes the purchase amount.
@@ -33,4 +36,3 @@ When the player clicks the "Start Charge" button, the payment flow begins.
 8. Then it fulfills the configured offer from the purchased listing.
 
  
-
