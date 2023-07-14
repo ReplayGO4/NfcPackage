@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace DynaPro
+namespace Beamable.Go4.Nfc
 {
     [CreateAssetMenu]
     public class DynaProSettings : ScriptableObject

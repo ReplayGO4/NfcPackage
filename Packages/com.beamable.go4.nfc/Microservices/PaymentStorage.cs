@@ -1,7 +1,8 @@
 using Beamable.Common;
+using Beamable.Server;
 using MongoDB.Driver;
 
-namespace Beamable.Server
+namespace Beamable.Go4.Nfc.Microservices
 {
 	[StorageObject("PaymentStorage")]
 	public class PaymentStorage : MongoStorageObject

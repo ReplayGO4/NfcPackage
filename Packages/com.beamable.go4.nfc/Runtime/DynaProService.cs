@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Beamable.Common;
 using Beamable.Coroutines;
 
-namespace DynaPro
+namespace Beamable.Go4.Nfc
 {
     public class DynaProService
     {

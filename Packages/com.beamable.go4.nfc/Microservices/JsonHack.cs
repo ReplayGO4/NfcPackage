@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection;
-namespace Beamable.Microservices
+namespace Beamable.Go4.Nfc.Common
 {
     public static class JsonHack
     {

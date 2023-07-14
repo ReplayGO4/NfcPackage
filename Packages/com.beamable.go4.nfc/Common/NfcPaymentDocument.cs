@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using Beamable.Server;
 
-namespace Beamable.Common
+namespace Beamable.Go4.Nfc.Common
 {
 
     public class TestDocument : StorageDocument

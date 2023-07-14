@@ -1,7 +1,7 @@
 ﻿using System;
 using Beamable.Common.Shop;
 
-namespace Beamable.Common
+namespace Beamable.Go4.Nfc.Common
 {
     [Serializable]
     public class MagtekPaymentRequest
