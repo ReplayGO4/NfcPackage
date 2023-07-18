@@ -16,7 +16,7 @@ on:
 jobs:
   rerun-pr-steps:
     if: github.event.inputs.prechecks == 'true'
-    uses: ReplayGO4/MagtekUnityExample/.github/workflows/pr.yml@main
+    uses: ReplayGO4/NfcPackage/.github/workflows/pr.yml@main
     secrets: inherit
   build:
     needs: rerun-pr-steps
