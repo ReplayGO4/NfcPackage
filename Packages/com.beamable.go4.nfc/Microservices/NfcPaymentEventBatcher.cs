@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Beamable.Common;
+using Beamable.Go4.Nfc.Common;
 using Beamable.Server;
 using MongoDB.Driver;
 using UnityEngine;
 
-namespace Beamable.Microservices
+namespace Beamable.Go4.Nfc.Microservices
 {
     
     public class NfcPaymentEventBatcher

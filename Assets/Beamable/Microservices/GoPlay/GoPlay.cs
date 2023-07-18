@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Beamable.Common;
+using Beamable.Go4.Nfc.Common;
+using Beamable.Go4.Nfc.Microservices;
 using Beamable.Server;
 using DynaProx.MPPGv4Service;
 using MongoDB.Driver;
@@ -17,38 +19,13 @@ namespace Beamable.Microservices
 		public static void Configure(IServiceBuilder builder)
 		{
 			// these services are shared for all requests
-			builder.Builder.AddSingleton<IMPPGv4Service>(_ =>
-				new MPPGv4ServiceClient(MPPGv4ServiceClient.EndpointConfiguration.BasicHttpBinding_IMPPGv4Service));
-			builder.Builder.AddSingleton<PaymentServiceSettings>();
-			builder.Builder.AddSingleton<MagTekService>();
-			builder.Builder.AddSingleton<NfcPaymentEventBatcher>();
-
-			// every request has its own NfcPaymentService, so that the service can use the IUserContext
-			builder.Builder.AddScoped<NfcPaymentService>();
-
-			JsonHack.Load();
-			
+			builder.AddNfcPaymentServices();
 		}
 
 		[InitializeServices]
 		public static void Init(IServiceInitializer initializer)
 		{
-			try
-			{
-				var batcher = initializer.GetService<NfcPaymentEventBatcher>();
-				Task.Run(async () =>
-				{
-					while (true)
-					{
-						await Task.Delay(5000);
-						await batcher.SendAll();
-					}
-				});
-			}
-			catch (Exception ex)
-			{
-				Debug.LogException(ex);
-			}
+			initializer.StartBatcher();
 		}
 		
 		

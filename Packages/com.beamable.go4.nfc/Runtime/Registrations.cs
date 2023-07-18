@@ -2,7 +2,7 @@
 using Beamable.Common.Dependencies;
 using UnityEngine;
 
-namespace DynaPro
+namespace Beamable.Go4.Nfc
 {
     [BeamContextSystem]
     public class Registrations

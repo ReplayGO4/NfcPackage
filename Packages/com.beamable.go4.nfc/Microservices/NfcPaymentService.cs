@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using Beamable.Common;
 using Beamable.Common.Api;
 using Beamable.Common.Shop;
-using Beamable.Serialization.SmallerJSON;
+using Beamable.Go4.Nfc.Common;
 using Beamable.Server;
 using Beamable.Server.Api.Content;
 using Beamable.Server.Api.Inventory;
-using MongoDB.Bson.IO;
 using MongoDB.Driver;
 using UnityEngine;
 using Optional = Beamable.Common.Content.Optional;
 
-namespace Beamable.Microservices
+namespace Beamable.Go4.Nfc.Microservices
 {
     public class NfcPaymentService
     {

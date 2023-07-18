@@ -3,7 +3,7 @@ using Beamable.Common.Api.Realms;
 using Beamable.Server.Api.RealmConfig;
 using DynaProx.MPPGv4Service;
 
-namespace Beamable.Microservices
+namespace Beamable.Go4.Nfc.Common
 {
     public class PaymentServiceSettings
     {

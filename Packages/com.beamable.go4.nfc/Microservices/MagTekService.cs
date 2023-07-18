@@ -1,9 +1,9 @@
 ﻿using System;
 using Beamable.Common;
+using Beamable.Go4.Nfc.Common;
 using DynaProx.MPPGv4Service;
-using UnityEngine;
 
-namespace Beamable.Microservices
+namespace Beamable.Go4.Nfc.Microservices
 {
     public class MagTekService
     {

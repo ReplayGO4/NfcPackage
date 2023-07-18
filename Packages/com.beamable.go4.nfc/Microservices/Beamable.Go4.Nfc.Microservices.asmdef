@@ -1,29 +1,27 @@
 {
-   "name":"Beamable.Microservice.GoPlay",
+  "name":"Beamable.Go4.Nfc.Microservices",
   "rootNamespace":"",
   "references":[
-     "Unity.Beamable.Runtime.Common",
+    "Unity.Beamable.Runtime.Common",
     "Unity.Beamable.Server.Runtime",
     "Unity.Beamable.Server.Runtime.Shared",
     "Unity.Beamable",
     "Beamable.SmallerJSON",
     "Unity.Beamable.Server.Runtime.Common",
     "Unity.Beamable.Server.Runtime.Mocks",
-    "Unity.Beamable.Customer.Common",
-    "Beamable.Storage.PaymentStorage",
-    "Beamable.Go4.Nfc.Microservices",
-    "Beamable.Go4.Nfc.Common"
+    "Beamable.Go4.Nfc.Common",
+    "Beamable.Storage.PaymentStorage"
   ],
   "includePlatforms":[
-     "Editor"
+    "Editor"
   ],
   "excludePlatforms":[
-     
+
   ],
   "allowUnsafeCode":false,
   "overrideReferences":true,
   "precompiledReferences":[
-     "DnsClient.dll",
+    "DnsClient.dll",
     "MongoDB.Bson.dll",
     "MongoDB.Driver.Core.dll",
     "MongoDB.Driver.dll",
@@ -34,10 +32,10 @@
   ],
   "autoReferenced":false,
   "defineConstraints":[
-     
+
   ],
   "versionDefines":[
-     
+
   ],
   "noEngineReferences":false
 }
