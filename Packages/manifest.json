@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.beamable.go4.nfc": "https://github.com/ReplayGO4/NfcPackage.git?path=/Packages/com.beamable.go4.nfc#latest",
     "com.beamable": "1.16.1",
     "com.beamable.server": "1.16.1",
     "com.unity.collab-proxy": "2.0.1",

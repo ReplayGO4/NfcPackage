@@ -15,9 +15,9 @@
       "url": "https://nexus.beamable.com/nexus/content/repositories/unity"
     },
     "com.beamable.go4.nfc": {
-      "version": "https://github.com/ReplayGO4/NfcPackage.git?path=/Packages/com.beamable.go4.nfc#latest",
+      "version": "file:com.beamable.go4.nfc",
       "depth": 0,
-      "source": "git",
+      "source": "embedded",
       "dependencies": {
         "com.unity.modules.uielements": "1.0.0",
         "com.unity.addressables": "1.18.19",
@@ -26,8 +26,7 @@
         "com.unity.test-framework": "1.1.19",
         "com.unity.test-framework.performance": "2.8.1-preview",
         "com.unity.nuget.newtonsoft-json": "3.0.2"
-      },
-      "hash": "8d6bafdf5ae65d9f700c0a8a8a875792624d6480"
+      }
     },
     "com.beamable.server": {
       "version": "1.16.1",
