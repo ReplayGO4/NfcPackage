@@ -1,5 +1,5 @@
 {
-	"name":"Beamable.Go4.Nfc.Runtime",
+	"name":"Go4.Nfc.Runtime",
 	"references":[
 		"Unity.Beamable.Runtime.Common",
 		"Beamable.Coroutines",
