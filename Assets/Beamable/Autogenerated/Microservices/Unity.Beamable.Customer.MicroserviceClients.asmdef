@@ -6,7 +6,7 @@
     "Unity.Beamable.Server.Runtime",
     "Unity.Beamable.Server.Runtime.Common",
     "Unity.Beamable.Customer.Common",
-     "Beamable.Go4.Nfc.Common"
+     "Go4.Nfc.Common"
      
   ],
   "name":"Unity.Beamable.Customer.MicroserviceClients",

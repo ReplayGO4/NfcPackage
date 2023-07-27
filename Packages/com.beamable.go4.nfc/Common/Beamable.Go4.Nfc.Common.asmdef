@@ -5,6 +5,6 @@
     "Unity.Beamable.Server.Runtime.Mocks",
     "Beamable.SmallerJSON"
   ],
-  "name":"Beamable.Go4.Nfc.Common",
+  "name":"Go4.Nfc.Common",
   "autoReferenced":true
 }

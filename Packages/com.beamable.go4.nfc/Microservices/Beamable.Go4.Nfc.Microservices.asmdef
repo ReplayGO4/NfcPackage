@@ -1,5 +1,5 @@
 {
-  "name":"Beamable.Go4.Nfc.Microservices",
+  "name":"Go4.Nfc.Microservices",
   "rootNamespace":"",
   "references":[
     "Unity.Beamable.Runtime.Common",
@@ -9,8 +9,8 @@
     "Beamable.SmallerJSON",
     "Unity.Beamable.Server.Runtime.Common",
     "Unity.Beamable.Server.Runtime.Mocks",
-    "Beamable.Go4.Nfc.Common",
-    "Beamable.Storage.PaymentStorage"
+    "Go4.Nfc.Common",
+    "Go4.Storage.PaymentStorage"
   ],
   "includePlatforms":[
     "Editor"
