@@ -482,7 +482,7 @@ namespace Beamable.Go4.Nfc.Microservices
                         success = false,
                         magTekTransactionId = processResponse.MagTranID,
                         message = "payment declined",
-                        paymentToken = processResponse.TransactionOutput.Token
+                        paymentToken = processResponse.TransactionOutput?.Token
                     };
                 }
 
