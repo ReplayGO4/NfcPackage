@@ -41,6 +41,11 @@ namespace Beamable.Go4.Nfc
                 {
                     p.CompleteError(new DynaProChargeTimeoutException());
                 }
+
+                if (progress.data.status == ChargeStatus.PAYMENT_FAILED)
+                {
+                    p.CompleteError(new DynaProChargeFailedException());
+                }
             });
             var _ = command.Run();
             return charge;
@@ -49,6 +54,10 @@ namespace Beamable.Go4.Nfc
         public class DynaProChargeTimeoutException : Exception
         {
             public DynaProChargeTimeoutException(){}
+        }
+        public class DynaProChargeFailedException : Exception
+        {
+            public DynaProChargeFailedException(){}
         }
 
         [Serializable]
@@ -70,6 +79,7 @@ namespace Beamable.Go4.Nfc
             TRY_AGAIN = 3,
             REMOVE_CARD = 4,
             TIMEOUT = 5,
+            PAYMENT_FAILED = 6
         }
 
 
