@@ -1,6 +1,6 @@
 {
   "name": "com.beamable.go4.nfc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "displayName": "Go4 Nfc",
   "description": "Magtek and NFC integration",
   "unity": "2021.3",
