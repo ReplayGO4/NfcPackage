@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Beamable.Common.Dependencies;
 using Beamable.Go4.Nfc.Common;
 using Beamable.Server;
-using DynaProx.MPPGv4Service;
 using UnityEngine;
 
 namespace Beamable.Go4.Nfc.Microservices
@@ -41,8 +40,10 @@ namespace Beamable.Go4.Nfc.Microservices
         
         public static IDependencyBuilder AddNfcPaymentServices(this IDependencyBuilder builder)
         {
-            builder.AddSingleton<IMPPGv4Service>(_ =>
-                new MPPGv4ServiceClient(MPPGv4ServiceClient.EndpointConfiguration.BasicHttpBinding_IMPPGv4Service));
+#if BEAMABLE_MICROSERVICE
+            builder.AddSingleton<DynaProx.MPPGv4Service.IStandardMPPGv4Service>(_ =>
+                new DynaProx.MPPGv4Service.MPPGv4ServiceClient(DynaProx.MPPGv4Service.MPPGv4ServiceClient.EndpointConfiguration.BasicHttpBinding_IMPPGv4Service));
+#endif
             builder.AddSingleton<PaymentServiceSettings>();
             builder.AddSingleton<MagTekService>();
             builder.AddSingleton<NfcPaymentEventBatcher>();

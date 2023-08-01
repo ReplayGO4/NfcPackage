@@ -8,9 +8,9 @@ namespace Beamable.Go4.Nfc.Microservices
     public class MagTekService
     {
         private readonly PaymentServiceSettings _config;
-        private readonly IMPPGv4Service _client;
+        private readonly IStandardMPPGv4Service _client;
 
-        public MagTekService(PaymentServiceSettings config, IMPPGv4Service client)
+        public MagTekService(PaymentServiceSettings config, IStandardMPPGv4Service client)
         {
             _config = config;
             _client = client;
