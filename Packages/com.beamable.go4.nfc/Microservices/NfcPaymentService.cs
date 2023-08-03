@@ -303,7 +303,7 @@ namespace Beamable.Go4.Nfc.Microservices
             {
                 beamableListingId = listing.Id,
                 beamableSkuId = sku.Id,
-                amount = (amount/100M).ToString("C").Replace("$", ""),
+                amount = amount.ToString(),
                 customerTransactionId = transactionId,
                 gamerTag = gamerTag,
                 createdAt = now,
