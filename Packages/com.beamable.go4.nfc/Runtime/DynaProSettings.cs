@@ -8,6 +8,7 @@ namespace Beamable.Go4.Nfc
     {
 
         public bool logDebug;
+        public bool disableEnvOverride;
         
         
         [SerializeField]
@@ -17,8 +18,13 @@ namespace Beamable.Go4.Nfc
         {
             get
             {
+                if (disableEnvOverride)
+                {
+                    return commandPath;
+                }
+                
                 var envOverride = Environment.GetEnvironmentVariable("DYNAPRO_PATH");
-                return string.IsNullOrWhiteSpace(envOverride) ? commandPath : envOverride;
+                return string.IsNullOrWhiteSpace(envOverride) ? commandPath : $"\"{envOverride}\"";
             }
         }
         
